@@ -44,7 +44,6 @@ export default {
         floorPrevious(value, previous) {
             let result = +(value - previous).toFixed(4);
             if (result < 0) {
-                console.log(false)
                 return result * -1;
             }
             return result;
@@ -61,7 +60,7 @@ export default {
 </script>
 
 
-<style lang="scss">
+<style lang="scss" scoped>
 @font-face {
   font-family: 'icon';
   src: url('../../src/assets/icon/fonts/icomoon.ttf');

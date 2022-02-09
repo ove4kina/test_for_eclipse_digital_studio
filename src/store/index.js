@@ -1,5 +1,5 @@
 import { createStore } from 'vuex'
-
+import currency from './modules/currency'
 export default createStore({
   state: {
   },
@@ -8,5 +8,6 @@ export default createStore({
   actions: {
   },
   modules: {
+  currency,
   }
 })

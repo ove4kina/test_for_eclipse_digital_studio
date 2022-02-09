@@ -2,8 +2,8 @@ export default {
     state: {
         currency: [],
         result: null,
-        valuteDinamic: '',
-        valuteStatic: '',
+        valuteDinamic: 'AUD',
+        valuteStatic: 'AUD',
         valuteDinamicObj: [],
         valuteStaticObj: [],
         componentDinamic: [],
@@ -14,6 +14,8 @@ export default {
     mutations: {
         UPDATE_CURRENCY(state, currency) {
             state.currency = currency;
+            state.componentDinamic = Object.values(state.currency).filter(item => item.CharCode === state.valuteDinamic);
+            state.componentStatic = Object.values(state.currency).filter(item => item.CharCode === state.valuteStatic);
         },
         UPDATE_VALUTE_DINAMIC(state, valute, value) {
             state.valuteDinamic = valute;
@@ -28,7 +30,7 @@ export default {
             state.valuteStaticObj = Object.values(state.currency).filter(item => item.CharCode === state.valuteDinamic);
             let valueDinamic = Object.values(state.valuteDinamicObj).map(item => item.Value);
             let valueStatic = Object.values(state.valuteStaticObj).map(item => item.Value);
-            let total = valueDinamic*Number(state.valueDinamic) / valueStatic;
+            let total = valueDinamic*state.valueDinamic / valueStatic;
             state.result = total.toFixed(4);
         },
         UPDATE_VALUES_COMPONENT(state) {

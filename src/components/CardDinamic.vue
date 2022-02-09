@@ -9,7 +9,7 @@
                 :selected="valuteUpdate"
                 >{{item.CharCode}}</option>
             </select>
-            <input type="text" v-model="value"  @input="valueSave(); convertionValute() ">
+            <input type="text" v-model.number="value"  @input="valueSave(); convertionValute() ">
         </div>
     </div>
     
@@ -66,7 +66,7 @@ export default {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        width: 50%;
+        width: 70%;
     }
 }
 .card {

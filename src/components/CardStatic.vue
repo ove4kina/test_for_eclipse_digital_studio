@@ -1,11 +1,15 @@
 <template>
     <div class="card">
-        <h2 class="card__title">{{this.valute}}</h2>
+        <h2 class="card__title" v-for="(elem, index) in this.VALUES_COMPONENT_STATIC" :key="index">{{elem.Name}}</h2>
         <div class="card__description">
-            <select v-model="valute" @change="valuteStatic(this.valute)">
-                <option v-for="item in this.ALL_CURRENCY" :key="item.Id" :name="item.Name">{{item.CharCode}}</option>
+            <select v-model="valute" @change="valuteStatic(this.valute); convertionValute(this.value)">
+                <option v-for="item in this.ALL_CURRENCY" 
+                :key="item.Id" 
+                :name="item.Name"
+                :selected="valuteUpdate"
+                >{{item.CharCode}}</option>
             </select>
-            <input :value="this.VALUTE_RESULT"/>
+            <input :value="this.VALUTE_RESULT" disabled/>
         </div>
     </div>
 </template>
@@ -20,23 +24,31 @@ export default {
         return {
             value: '',
             valute: '',
+            selected: '',
             name: '',
-            currency: [
-                {title: 'title1', code: 'code1', id: 1,},
-                {title: 'title2', code: 'code2', id: 2,},
-                {title: 'title3', code: 'code3', id: 3,},
-            ],
         }
     },
+    // watch: {
+    //     valueUpdate() {
+    //         // this.value = this.VALUE_STATIC;
+    //         console.log(1)
+    //     }
+    // },
     computed: {
-        ...mapGetters(['ALL_CURRENCY', 'VALUTE_RESULT']),
-        },
+        ...mapGetters(['ALL_CURRENCY', 'VALUTE_RESULT', 'VALUES_COMPONENT', 'VALUES_COMPONENT_STATIC', 'VALUTE_STATIC', 'VALUE_STATIC']),
+        valuteUpdate() {
+            this.valute = this.VALUTE_STATIC;
+        }
+    },
     methods: {
         ...mapActions(['FETCH_CURRENCY']),
         ...mapMutations(['UPDATE_RESULT', 'UPDATE_VALUTE_STATIC']),
         valuteStatic(valute) {
             this.UPDATE_VALUTE_STATIC(valute);
-        }
+        },
+        convertionValute() {
+            this.UPDATE_RESULT();
+        },
     },
     async mounted() {
         this.FETCH_CURRENCY();

@@ -11,6 +11,7 @@
 <script>
 import CardStatic from '../components/CardStatic.vue'
 import CardDinamic from '../components/CardDinamic.vue'
+import {mapMutations} from 'vuex'
 
 export default {
     data() {
@@ -23,9 +24,11 @@ export default {
         'card-static-component': CardStatic,
     },
     methods: {
+        ...mapMutations(['UPDATE_VALUES_COMPONENT', 'UPDATE_RESULT']),
         swapValute() {
-
-        }
+            this.UPDATE_VALUES_COMPONENT();
+            this.UPDATE_RESULT();
+        },
     }
 }
 </script>

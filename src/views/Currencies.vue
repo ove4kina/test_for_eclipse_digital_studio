@@ -75,83 +75,76 @@ input {
     border: none;
 }
 
-.currency__list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-}
-.currency__item {
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 16px;
-  display: flex;
-  flex-direction: column;
-  align-items: start;
-  width: 100%;
-  max-width: 30%;
+.currency {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-family: Avenir, Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-align: center;
+    color: #2c3e50;
+  }
+  &__item {
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 16px;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    width: 100%;
+    max-width: 30%;
+    &:not(:last-child) {
+      margin-bottom: 24px;
+    }
+  }
+  &__title {
+    color: #ccc;
+    font-size: 16px;
+    font-weight: 500;
+  }
+  &__information {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 16px;
+  }
+  &__description {
+    display: flex;
+  }
+  &__code {
+    margin-right: 8px;
+  }
+  &__value {
+    display: flex;
+    align-items: center;
+    &::before {
+      content: '\e901';
+      font-family: 'icon';
+      display: block;
+      color: #ccc;
+      font-size: 10px;
+      margin-right: 8px;
+    }
+  }
+  &__previous {
+    color: #42b983;
+    &.red {
+      color: red;
+      &::before {
+        content: '\e904';
+        transform: rotateX(180deg);
+      }
+    }
+    &::before {
+      content: '\e903';
+      font-family: 'icon';
+      color: inherit;
+      margin-right: 8px;
+    }
+  }
+
 }
 
-.currency__item:not(:last-child) {
-  margin-bottom: 24px;
-}
-
-.currency__title {
-  color: #ccc;
-  font-size: 16px;
-  font-weight: 500;
-}
-
-.currency__information {
-  display: flex;
-  justify-content: space-between;
-  width: 100%;
-  margin-top: 16px;
-}
-.currency__description {
-  display: flex;
-}
-
-.currency__code {
-  margin-right: 8px;
-}
-
-.currency__value {
-  display: flex;
-  align-items: center;
-}
-
-.currency__value::before {
-  content: '\e901';
-  font-family: 'icon';
-  display: block;
-  color: #ccc;
-  font-size: 10px;
-  margin-right: 8px;
-}
-
-.currency__previous {
-  color: #42b983;
-}
-
-.currency__previous.red {
-  color: red;
-}
-.currency__previous {
-  color: #42b983;
-}
-.currency__previous::before {
-  content: '\e903';
-  font-family: 'icon';
-  color: inherit;
-  margin-right: 8px;
-}
-.currency__previous.red::before {
-  content: '\e904';
-  transform: rotateX(180deg);
-}
 </style>

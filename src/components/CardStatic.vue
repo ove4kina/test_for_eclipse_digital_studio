@@ -70,20 +70,19 @@ export default {
   align-items: start;
   width: 100%;
   max-width: 37%;
-}
-
-.card__title {
+  &__title {
     color: #ccc;
     font-size: 16px;
     font-weight: 500;
-}
-
-.card__description {
+  }
+  &__description {
     display: flex;
     justify-content: space-between;
     margin-top: 20px;
     width: 100%;
+  }
 }
+
 select, input {
     outline: none;
     border: none;

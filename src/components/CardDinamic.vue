@@ -31,18 +31,17 @@ export default {
         }
     },
     computed: {
-        ...mapGetters(['ALL_CURRENCY', 'VALUTE_RESULT', 'VALUES_COMPONENT_DINAMIC', 'VALUTE_DINAMIC', 'VALUE_DINAMIC']),
+        ...mapGetters(['ALL_CURRENCY', 'VALUES_COMPONENT_DINAMIC', 'VALUTE_DINAMIC', 'VALUE_DINAMIC']),
         valuteUpdate() {
             this.valute = this.VALUTE_DINAMIC;
         },
         valueUpdate() {
             this.value = this.VALUE_DINAMIC;
-            console.log(1)
         }
     },
     methods: {
         ...mapActions(['FETCH_CURRENCY']),
-        ...mapMutations(['UPDATE_RESULT', 'UPDATE_VALUTE_DINAMIC', 'UPDATE_COMPONENT_DINAMIC', 'UPDATE_VALUE']),
+        ...mapMutations(['UPDATE_RESULT', 'UPDATE_VALUTE_DINAMIC', 'UPDATE_VALUE']),
         convertionValute() {
             this.UPDATE_RESULT();
         },

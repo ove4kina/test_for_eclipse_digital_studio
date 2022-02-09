@@ -14,11 +14,6 @@ import CardDinamic from '../components/CardDinamic.vue'
 import {mapMutations} from 'vuex'
 
 export default {
-    data() {
-        return {
-    
-        }
-    },
     components: {
         'card-dinamic-component': CardDinamic,
         'card-static-component': CardStatic,

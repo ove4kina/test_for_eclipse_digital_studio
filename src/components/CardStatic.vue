@@ -28,14 +28,8 @@ export default {
             name: '',
         }
     },
-    // watch: {
-    //     valueUpdate() {
-    //         // this.value = this.VALUE_STATIC;
-    //         console.log(1)
-    //     }
-    // },
     computed: {
-        ...mapGetters(['ALL_CURRENCY', 'VALUTE_RESULT', 'VALUES_COMPONENT', 'VALUES_COMPONENT_STATIC', 'VALUTE_STATIC', 'VALUE_STATIC']),
+        ...mapGetters(['ALL_CURRENCY', 'VALUTE_RESULT', 'VALUES_COMPONENT_STATIC', 'VALUTE_STATIC']),
         valuteUpdate() {
             this.valute = this.VALUTE_STATIC;
         }

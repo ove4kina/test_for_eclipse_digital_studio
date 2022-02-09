@@ -10,7 +10,6 @@ export default {
         componentStatic: [],
         valueDinamic: null,
         valueStatic: null,
-        // value: null,
     },
     mutations: {
         UPDATE_CURRENCY(state, currency) {
@@ -29,11 +28,8 @@ export default {
             state.valuteStaticObj = Object.values(state.currency).filter(item => item.CharCode === state.valuteDinamic);
             let valueDinamic = Object.values(state.valuteDinamicObj).map(item => item.Value);
             let valueStatic = Object.values(state.valuteStaticObj).map(item => item.Value);
-            console.log(state.valueDinamic)
             let total = valueDinamic*Number(state.valueDinamic) / valueStatic;
             state.result = total.toFixed(4);
-            console.log(state.result)
-            // state.valueStatic = state.result;
         },
         UPDATE_VALUES_COMPONENT(state) {
             let decomposition = state.valuteDinamic;
@@ -76,9 +72,5 @@ export default {
         VALUE_DINAMIC(state) {
             return state.valueDinamic;
         },
-        // VALUE_STATIC(state) {   
-        //     console.log(state.valueStatic)
-        //     return state.valueStatic;
-        // }
     }
 }

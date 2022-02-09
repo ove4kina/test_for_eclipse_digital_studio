@@ -23,11 +23,6 @@ import {mapActions, mapGetters} from 'vuex'
 export default {
     data() {
         return {
-            // currency: [
-            //     {title: 'title1', code: 'code1', id: 1,},
-            //     {title: 'title2', code: 'code2', id: 2,},
-            //     {title: 'title3', code: 'code3', id: 3,},
-            // ],
             value: '',
             arrowStyle: false,
         }

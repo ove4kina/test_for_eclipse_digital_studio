@@ -31,7 +31,7 @@ export default {
             let valueDinamic = Object.values(state.valuteDinamicObj).map(item => item.Value);
             let valueStatic = Object.values(state.valuteStaticObj).map(item => item.Value);
             let total = valueDinamic*state.valueDinamic / valueStatic;
-            state.result = total.toFixed(4);
+            state.result = total.toFixed(2);
         },
         UPDATE_VALUES_COMPONENT(state) {
             let decomposition = state.valuteDinamic;

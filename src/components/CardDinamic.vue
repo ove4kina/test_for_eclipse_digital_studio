@@ -9,7 +9,7 @@
                 :selected="valuteUpdate"
                 >{{item.CharCode}}</option>
             </select>
-            <input type="text" v-model.number="value"  @input="valueSave(); convertionValute() ">
+            <input type="number" v-model.number="value"  @input="valueSave(); convertionValute() ">
         </div>
     </div>
     
@@ -102,6 +102,11 @@ input {
     &:focus {
         border-color: royalblue;
     }
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
 }
 button {
     border-radius: 50%;

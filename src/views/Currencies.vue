@@ -40,12 +40,16 @@ export default {
             let result = +(value - previous).toFixed(4);
             if (result < 0) {
                 return result * -1;
+            } else {
+              return result;
             }
-            return result;
         },
         toggleClass(value, previous) {
-            (value-previous < 0) ? this.arrowStyle = true : this.arrowStyle = false;
-            return {red : this.arrowStyle}
+          let result = +(value-previous);
+          if (result < 0) {
+            this.arrowStyle = true;
+            return {red: this.arrowStyle}
+          }
         },
     },
     async mounted() {

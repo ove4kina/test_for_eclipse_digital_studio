@@ -9,7 +9,7 @@
 <style lang="scss">
 
 body {
-  background-color: dodgerblue;
+  background-color: #2697FF;
   
 }
 *{
@@ -21,7 +21,7 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
-  color: #2c3e50;
+  color: #555555;
 }
 
 #nav {
@@ -29,7 +29,7 @@ body {
 
   a {
     font-weight: bold;
-    color: #2c3e50;
+    color: #555555;
 
     &.router-link-exact-active {
       color: #fff;

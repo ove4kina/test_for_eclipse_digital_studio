@@ -84,7 +84,8 @@ input {
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
     text-align: center;
-    color: #2c3e50;
+    color: #555555;
+    margin-bottom: 30px;
   }
   &__item {
     background-color: #fff;
@@ -95,14 +96,18 @@ input {
     align-items: start;
     width: 100%;
     max-width: 30%;
+    -webkit-box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    -moz-box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+    box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
     &:not(:last-child) {
       margin-bottom: 24px;
     }
   }
   &__title {
-    color: #ccc;
+    color: #ACACAC;
     font-size: 16px;
     font-weight: 500;
+    text-align: left;
   }
   &__information {
     display: flex;
@@ -123,13 +128,13 @@ input {
       content: '\e901';
       font-family: 'icon';
       display: block;
-      color: #ccc;
+      color: #B1B1B1;
       font-size: 10px;
       margin-right: 8px;
     }
   }
   &__previous {
-    color: #42b983;
+    color: #4DD14D;
     &.red {
       color: red;
       &::before {

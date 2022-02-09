@@ -9,7 +9,7 @@
                 :selected="valuteUpdate"
                 >{{item.CharCode}}</option>
             </select>
-            <input type="number" v-model.number="value"  @input="valueSave(); convertionValute() ">
+            <input type="number" v-model.number="value" @input="valueSave(); convertionValute() ">
         </div>
     </div>
     
@@ -78,10 +78,14 @@ export default {
   align-items: start;
   width: 100%;
   max-width: 37%;
+  -webkit-box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  -moz-box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
+  box-shadow: 0px 4px 8px 0px rgba(34, 60, 80, 0.2);
   &__title {
-    color: #ccc;
+    color: #ACACAC;
     font-size: 16px;
     font-weight: 500;
+    text-align: left;
   }
   &__description {
     display: flex;
@@ -95,11 +99,14 @@ select, input {
     outline: none;
     border: none;
 }
+select {
+    cursor: pointer;
+}
 input {
     border-bottom: 2px solid #ccc;
     max-width: 100px;
     &:focus {
-        border-color: royalblue;
+        border-color: #44A5FF;
     }
 }
 input::-webkit-outer-spin-button,
@@ -110,16 +117,17 @@ input::-webkit-inner-spin-button {
 button {
     border-radius: 50%;
     background-color: #fff;
-    width: 40px;
-    height: 40px;
+    width: 41px;
+    height: 41px;
     border: none;
     display: flex;
     justify-content: center;
     align-items: center;
+    cursor: pointer;
     &::before {
         content: '\e902';
         font-family: 'icon';
-        color: royalblue;
+        color: #2697FF;
     }
 }
 </style>
